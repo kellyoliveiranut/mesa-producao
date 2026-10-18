@@ -1,4 +1,4 @@
-import { Home, LayoutGrid, Calendar, BarChart2, Plus, Wand2, Images, LogOut, HelpCircle } from "lucide-react";
+import { Home, LayoutGrid, Calendar, BarChart2, Plus, Wand2, Images, LogOut, HelpCircle, Sun } from "lucide-react";
 import { C } from "../theme";
 import { useAuth } from "../lib/useAuth";
 import Avatar from "./Avatar";
@@ -7,6 +7,7 @@ export default function Sidebar({ screen, setScreen, setShowAdd, avatar, onUploa
   const { name, signOut } = useAuth();
   const tabs = [
     { id: "home", icon: <Home size={20} />, label: "Início" },
+    { id: "painel", icon: <Sun size={20} />, label: "Painel" },
     { id: "content", icon: <LayoutGrid size={20} />, label: "Conteúdos" },
     { id: "calendar", icon: <Calendar size={20} />, label: "Calendário" },
     { id: "gallery", icon: <Images size={20} />, label: "Galeria" },

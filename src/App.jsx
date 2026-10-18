@@ -21,6 +21,7 @@ import CalendarScreen from "./screens/CalendarScreen";
 import ContentScreen from "./screens/ContentScreen";
 import AnalyticsScreen from "./screens/AnalyticsScreen";
 import SkillsScreen from "./screens/SkillsScreen";
+import PainelScreen from "./screens/PainelScreen";
 import GalleryScreen from "./screens/GalleryScreen";
 import TutorialScreen from "./screens/TutorialScreen";
 import EditorScreen from "./screens/EditorScreen";
@@ -153,6 +154,7 @@ function Dashboard({ user, name, signOut }) {
       )}
       {screen === "calendar" && <CalendarScreen items={items} detail={detail} setDetail={setDetail} setShowAdd={openNew} onAddOnDate={openNewOnDate} onDelete={handleDelete} onEdit={openEdit} onOpen={openEditor} isDesktop={isDesktop} />}
       {screen === "analytics" && <AnalyticsScreen items={items} isDesktop={isDesktop} />}
+      {screen === "painel" && <PainelScreen isDesktop={isDesktop} />}
       {screen === "skills" && <SkillsScreen isDesktop={isDesktop} />}
       {screen === "gallery" && <GalleryScreen {...gallery} isDesktop={isDesktop} />}
       {screen === "help" && <TutorialScreen isDesktop={isDesktop} />}
