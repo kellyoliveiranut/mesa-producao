@@ -284,3 +284,127 @@ export const IDEAS = [
     "cta": "Convite com acolhimento. Nunca meta de peso nem número."
   }
 ];
+
+// Biblioteca de Stories (Essentia). Texto original para oncologia.
+// Sem depoimento de paciente, sem antes e depois, sem promessa de cura ou de peso (CFN 856).
+export const STORIES = [
+  {
+    id: "frameworks",
+    titulo: "Frameworks",
+    sub: "Moldes de sequência para repetir",
+    itens: [
+      { label: "Caixinha de perguntas em 4 stories", who: "", frames: [
+        "Story 1: caixinha. \"Qual a sua maior dúvida de comida durante o tratamento?\"",
+        "Story 2: print da pergunta (sem nome) e a resposta curta, falando para a câmera.",
+        "Story 3: o que fazer hoje, em uma frase prática.",
+        "Story 4: \"Quer que eu responda a sua? Manda a palavra DÚVIDA no direct.\"" ] },
+      { label: "Mito x Verdade com enquete", who: "h", frames: [
+        "Story 1: o mito em letras grandes. \"Cortar o açúcar faz o tumor morrer de fome.\"",
+        "Story 2: enquete. Mito ou verdade?",
+        "Story 3: a resposta calma, sem susto: o corpo inteiro usa glicose.",
+        "Story 4: o que pesa de verdade: manter força e proteína.",
+        "Story 5: \"Ouviu outro mito? Me conta no direct.\"" ] },
+      { label: "Passo a passo em 5 stories", who: "h", frames: [
+        "Story 1: o problema. \"Tudo com gosto de metal?\"",
+        "Story 2: ajuste 1, comida fria ou em temperatura ambiente.",
+        "Story 3: ajuste 2, talher de plástico ou madeira.",
+        "Story 4: ajuste 3, um toque de limão ou ervas, se não houver aftas.",
+        "Story 5: \"Salve para o próximo dia difícil. Quer o guia? Manda GOSTO.\"" ] },
+      { label: "Conversa de direct com palavra-chave", who: "c", frames: [
+        "Story 1: a frase que ela pensa no espelho.",
+        "Story 2: o que mudou no corpo com a terapia hormonal, em linguagem simples.",
+        "Story 3: o que ajuda: força, movimento e proteína, sem número na balança.",
+        "Story 4: \"Manda CORPO no direct e eu te explico.\"" ] },
+    ],
+  },
+  {
+    id: "desejo",
+    titulo: "Ativadores de desejo",
+    sub: "Ganchos que falam do que ela quer viver",
+    itens: [
+      { label: "Comer em paz (Helena)", who: "h", frames: [
+        "Imagina almoçar sem medo do cheiro da comida.",
+        "E se a refeição deixasse de ser uma briga e virasse um momento seu?",
+        "Existe um jeito de comer no pior dia de quimio. Vou te mostrar um." ] },
+      { label: "Ter força (Helena)", who: "h", frames: [
+        "Sentir as pernas firmes para subir a escada de casa.",
+        "Força também é um objetivo de tratamento, e a comida entra nisso.",
+        "Dá para proteger o seu músculo enquanto você se cuida." ] },
+      { label: "Se sentir ela de novo (Cláudia)", who: "c", frames: [
+        "Acordar sem as juntas travadas.",
+        "Lembrar o nome da pessoa sem o branco na hora.",
+        "Olhar no espelho e reconhecer o próprio corpo, no ritmo dele." ] },
+      { label: "Ter clareza (as duas)", who: "", frames: [
+        "Parar de adivinhar o que pode e o que não pode comer.",
+        "Um plano que cabe na sua rotina e no seu cansaço.",
+        "Saber que você não está fazendo nada errado." ] },
+      { label: "Para quem cuida", who: "", frames: [
+        "Ver quem você ama comer um pouquinho, sem insistir.",
+        "Cuidar sem se esgotar também é possível.",
+        "Você também merece ser cuidada." ] },
+    ],
+  },
+  {
+    id: "storyselling",
+    titulo: "StorySelling",
+    sub: "Narrativas que levam ao convite, sem prova de resultado",
+    itens: [
+      { label: "A cena da cozinha", who: "h", frames: [
+        "Story 1: \"Hoje uma paciente me contou que passou a semana só olhando para a comida.\" (história composta, sem nome)",
+        "Story 2: o que isso diz sobre o enjoo e o medo de comer errado.",
+        "Story 3: como eu começo a olhar um caso assim: tratamento, exames, o que desce hoje.",
+        "Story 4: o que o acompanhamento tem: ajuste conforme o ciclo muda.",
+        "Story 5: \"Se isso é a sua semana, manda COMEÇAR no direct. Sem pressão.\"" ] },
+      { label: "O corpo que mudou", who: "c", frames: [
+        "Story 1: \"Quase ninguém explica o que a terapia hormonal faz com o corpo.\"",
+        "Story 2: queda de estrogênio, músculo, energia, gordura. Em duas frases.",
+        "Story 3: por que dieta comum não serve para esse momento.",
+        "Story 4: o foco do plano: força e função, nunca meta de peso.",
+        "Story 5: \"Quer entender o seu? Manda CORPO.\"" ] },
+      { label: "Por que eu faço isso (autoridade humana)", who: "", frames: [
+        "Story 1: foto sua no consultório, sem paciente. \"Por que escolhi a oncologia.\"",
+        "Story 2: o que mais me incomodava ao ver a comida tratada como detalhe.",
+        "Story 3: o que eu acredito: comer faz parte do cuidado.",
+        "Story 4: como é a primeira consulta, passo a passo.",
+        "Story 5: convite aberto, sem escassez falsa." ] },
+    ],
+  },
+  {
+    id: "lifestyle",
+    titulo: "Lifestyle intencional",
+    sub: "Bastidores que aproximam sem expor paciente",
+    itens: [
+      { label: "Raiz Amazônica", who: "", frames: [
+        "Foto de um ingrediente da região (jambu, tucumã, cupuaçu, açaí de verdade).",
+        "Uma frase: o que ele tem de interessante para quem está com paladar alterado.",
+        "Pergunta: \"Qual sabor da sua infância ainda desce bem?\"" ] },
+      { label: "Por trás do jaleco", who: "", frames: [
+        "Foto da sua mesa de estudo ou do café antes de atender.",
+        "Uma coisa que você aprendeu esta semana, em linguagem simples.",
+        "Fechamento: \"Estudo para te explicar sem susto.\"" ] },
+      { label: "Cozinha real", who: "", frames: [
+        "Vídeo curto de um preparo fácil e morno, sem cheiro forte.",
+        "Texto na tela: quando serve (enjoo, pouco apetite, boca seca).",
+        "Aviso: \"O seu caso pode pedir ajuste. Me chama.\"" ] },
+      { label: "Quem cuida também precisa", who: "", frames: [
+        "Uma frase para o cuidador, falando devagar.",
+        "Uma ideia de lanche rápido para quem não tem tempo de comer.",
+        "\"Marca aí quem está cuidando de alguém hoje.\"" ] },
+    ],
+  },
+  {
+    id: "frequencia",
+    titulo: "Frequência e calendário",
+    sub: "Ritmo semanal sugerido",
+    itens: [
+      { label: "Segunda: educar", who: "h", frames: ["1 sequência curta de Mito x Verdade (Frameworks)."] },
+      { label: "Terça: caixinha", who: "", frames: ["Abrir a caixinha de perguntas e guardar as respostas para quinta."] },
+      { label: "Quarta: desejo", who: "c", frames: ["2 ou 3 stories de Ativadores de desejo da Cláudia."] },
+      { label: "Quinta: responder", who: "", frames: ["Responder 3 perguntas da caixinha, em vídeo."] },
+      { label: "Sexta: StorySelling", who: "", frames: ["1 narrativa de 5 stories com convite no último."] },
+      { label: "Sábado: lifestyle", who: "", frames: ["Raiz Amazônica ou Cozinha real, leve."] },
+      { label: "Domingo: descanso", who: "", frames: ["No máximo 1 story pessoal. Sem venda."] },
+      { label: "Regra de ouro", who: "", frames: ["3 a 5 dias com stories por semana, no máximo 1 convite direto. Stories interativos (enquete, quiz) precisam ser postados pelo app do Instagram."] },
+    ],
+  },
+];

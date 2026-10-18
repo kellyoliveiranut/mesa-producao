@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Copy, Check } from "lucide-react";
 import { C } from "../theme";
-import { PAINEL, IDEAS } from "../painelData";
+import { PAINEL, IDEAS, STORIES } from "../painelData";
 
 const GREEN = "#2F6B4F";
 const PURPLE = "#6A2C7A";
@@ -86,6 +86,44 @@ function IdeaCard({ i }) {
         {copied ? <Check size={15} /> : <Copy size={15} />} {copied ? "Copiado" : "Copiar roteiro e legenda"}
       </button>
     </article>
+  );
+}
+
+
+function StoryItem({ it }) {
+  const [copied, setCopied] = useState(false);
+  const col = whoColor(it.who);
+  const text = `${it.label}\n\n${it.frames.join("\n")}`;
+  const onCopy = async () => {
+    if (await copyText(text)) { setCopied(true); setTimeout(() => setCopied(false), 1800); }
+  };
+  return (
+    <div style={{ ...card, borderLeft: `4px solid ${col}`, marginBottom: 10 }}>
+      <h3 style={h3}>{it.label}</h3>
+      <ul style={{ margin: "0 0 12px", paddingLeft: 18, fontSize: 13.5, color: C.text, lineHeight: 1.55 }}>
+        {it.frames.map((f, k) => <li key={k}>{f}</li>)}
+      </ul>
+      <button onClick={onCopy} style={{ display: "flex", alignItems: "center", gap: 7, background: copied ? C.accent : C.dark, border: "none", borderRadius: 10, padding: "8px 14px", cursor: "pointer", color: "#FBF6EC", fontWeight: 600, fontSize: 13 }}>
+        {copied ? <Check size={15} /> : <Copy size={15} />} {copied ? "Copiado" : "Copiar"}
+      </button>
+    </div>
+  );
+}
+
+function StoriesLibrary() {
+  const [open, setOpen] = useState("frameworks");
+  return (
+    <div style={{ marginBottom: 28 }}>
+      {STORIES.map((b) => (
+        <div key={b.id} style={{ ...card, padding: 0, marginBottom: 12, overflow: "hidden" }}>
+          <button onClick={() => setOpen(open === b.id ? null : b.id)} style={{ width: "100%", textAlign: "left", background: "none", border: "none", padding: "15px 18px", cursor: "pointer" }}>
+            <div style={{ fontWeight: 600, fontSize: 15, color: C.text }}>{b.titulo}</div>
+            <div style={{ fontSize: 12.5, color: C.muted, marginTop: 2 }}>{b.sub} · {b.itens.length} itens</div>
+          </button>
+          {open === b.id && <div style={{ padding: "0 14px 6px" }}>{b.itens.map((it) => <StoryItem key={it.label} it={it} />)}</div>}
+        </div>
+      ))}
+    </div>
   );
 }
 
@@ -179,6 +217,11 @@ export default function PainelScreen({ isDesktop }) {
         Antes de postar, confira a Resolução CFN nº 856:
         <ul style={{ margin: "6px 0 0", paddingLeft: 18 }}>{PAINEL.regras.map((r, k) => <li key={k}>{r}</li>)}</ul>
       </div>
+
+      {/* Biblioteca de stories */}
+      <h2 style={h2}>Biblioteca de Stories</h2>
+      <p style={{ ...small, fontSize: 13.5, marginBottom: 12 }}>Cinco blocos para montar os stories da semana, com a Helena (verde) e a Cláudia (roxo). Sem depoimento de paciente, conforme a CFN 856.</p>
+      <StoriesLibrary />
 
       {/* Semana */}
       <span style={label}>{PAINEL.semanaLabel}</span>
