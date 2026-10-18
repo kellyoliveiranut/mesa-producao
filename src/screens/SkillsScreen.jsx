@@ -2,7 +2,9 @@ import { useState } from "react";
 import { ChevronLeft, ChevronRight, Download } from "lucide-react";
 import { C } from "../theme";
 import { SKILLS, SKILLS_OUTRO } from "../skills";
+import { BookText } from "lucide-react";
 import Markdown from "../components/Markdown";
+import ScriptsScreen from "./ScriptsScreen";
 
 // Dispara o download do arquivo .md da skill
 function downloadSkill(skill) {
@@ -26,6 +28,8 @@ function downloadSkill(skill) {
 export default function SkillsScreen({ isDesktop }) {
   const [selected, setSelected] = useState(null);
   const skill = SKILLS.find((s) => s.id === selected);
+
+  if (selected === "scripts") return <ScriptsScreen isDesktop={isDesktop} onBack={() => setSelected(null)} />;
 
   if (skill) return <SkillDetail skill={skill} onBack={() => setSelected(null)} isDesktop={isDesktop} />;
 
@@ -59,6 +63,23 @@ export default function SkillsScreen({ isDesktop }) {
           );
         })}
       </div>
+
+
+      {/* Biblioteca de scripts */}
+      <button onClick={() => setSelected("scripts")} style={{
+        width: "100%", textAlign: "left", background: C.card, border: `1px solid ${C.border}`,
+        borderRadius: 16, padding: "16px", cursor: "pointer", boxShadow: C.sh, marginTop: 18,
+        display: "flex", gap: 13, alignItems: "center",
+      }}>
+        <div style={{ width: 44, height: 44, borderRadius: 12, background: C.dark, display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
+          <BookText size={20} color={C.gold} />
+        </div>
+        <div style={{ flex: 1, minWidth: 0 }}>
+          <div style={{ fontWeight: 600, fontSize: 15, color: C.text, marginBottom: 2 }}>Biblioteca de Scripts</div>
+          <div style={{ fontSize: 12.5, color: C.muted }}>Mensagens prontas de WhatsApp para pacientes de oncologia</div>
+        </div>
+        <ChevronRight size={18} color={C.muted} style={{ flexShrink: 0 }} />
+      </button>
 
       {/* Como as três funcionam juntas */}
       <div style={{ background: C.card, border: `1px solid ${C.border}`, borderRadius: 16, padding: "4px 18px 6px", boxShadow: C.sh, marginTop: 18 }}>
